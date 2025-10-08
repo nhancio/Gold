@@ -91,7 +91,7 @@ const ComparisonSection = () => {
 
           <div className="bg-gradient-to-r from-primary to-accent p-6 text-center">
             <p className="text-secondary font-semibold text-lg">
-              At Benaka Gold Company, we offer a transparent and hassle-free platform for selling your gold.
+              At OMV Gold Company, we offer a transparent and hassle-free platform for selling your gold.
             </p>
           </div>
         </Card>

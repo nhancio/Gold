@@ -1,19 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Coins, Key, ArrowRight, Star } from "lucide-react";
-import goldAssessment from "@/assets/gold-assessment.jpg";
-import instantCash from "@/assets/instant-cash.jpg";
-import { DiamondIcon, CrownIcon, GemIcon, SparkleIcon, RingIcon, NecklaceIcon } from "@/assets/jewelry-icons";
+import { ArrowRight } from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
     {
-      icon: DiamondIcon,
-      jewelryIcon: RingIcon,
-      title: "Sell Gold",
-      subtitle: "At Today's Best Price",
-      description: "Get 100% value of your gold with instant cash payment. No waiting, no hassle.",
-      image: instantCash,
+      title: "Buy Gold",
+      subtitle: "Sell Your Gold at Best Price Today",
+      description: "Get the highest market rates for your gold with instant cash payment. No waiting, no hassle.",
+      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       features: [
         "Best market rates",
         "Instant payment",
@@ -22,12 +17,10 @@ const ServicesSection = () => {
       ],
     },
     {
-      icon: CrownIcon,
-      jewelryIcon: NecklaceIcon,
       title: "Release Pledged Gold",
-      subtitle: "Simple & Fast Process",
-      description: "Release your pledged gold from any loan provider and get the best value immediately.",
-      image: goldAssessment,
+      subtitle: "Get Financial Freedom",
+      description: "Release your gold from pledges and get financial freedom. Better than paying loan interest.",
+      image: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
       features: [
         "No EMI burden",
         "Quick verification",
@@ -39,23 +32,11 @@ const ServicesSection = () => {
 
   return (
     <section id="services" className="py-20 bg-gradient-to-b from-luxury-cream to-luxury-white relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <GemIcon className="absolute top-20 left-10 h-12 w-12 text-gold-200 opacity-30 animate-pulse" />
-        <SparkleIcon className="absolute top-40 right-20 h-8 w-8 text-luxury-red opacity-20 animate-bounce" />
-        <DiamondIcon className="absolute bottom-20 left-1/4 h-10 w-10 text-gold-300 opacity-25 animate-pulse" />
-        <CrownIcon className="absolute bottom-40 right-10 h-9 w-9 text-gold-200 opacity-30 animate-bounce" />
-      </div>
-      
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <GemIcon className="h-6 w-6 text-gold-500" />
-            <h2 className="text-sm font-semibold text-gold-600 uppercase tracking-wider">
-              Our Services
-            </h2>
-            <Star className="h-6 w-6 text-luxury-red" />
-          </div>
+          <h2 className="text-sm font-semibold text-gold-600 uppercase tracking-wider mb-4">
+            Our Services
+          </h2>
           <h3 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-luxury bg-clip-text text-transparent">
             Experience Trusted Services
           </h3>
@@ -74,22 +55,12 @@ const ServicesSection = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 to-transparent" />
-                <div className="absolute top-4 right-4">
-                  <div className="p-2 rounded-full bg-gradient-gold shadow-gold">
-                    <service.jewelryIcon className="h-5 w-5 text-luxury-white" />
-                  </div>
-                </div>
                 <div className="absolute bottom-6 left-6 right-6">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="p-3 rounded-lg bg-gradient-gold shadow-gold">
-                      <service.icon className="h-6 w-6 text-luxury-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-2xl font-bold text-secondary-foreground">
-                        {service.title}
-                      </h4>
-                      <p className="text-gold-500 font-semibold">{service.subtitle}</p>
-                    </div>
+                  <div>
+                    <h4 className="text-2xl font-bold text-secondary-foreground">
+                      {service.title}
+                    </h4>
+                    <p className="text-gold-500 font-semibold">{service.subtitle}</p>
                   </div>
                 </div>
               </div>
@@ -105,10 +76,9 @@ const ServicesSection = () => {
                   ))}
                 </ul>
                 <Button 
-                  className="w-full group bg-gradient-gold hover:bg-gradient-gold-dark text-luxury-white border-0 shadow-gold hover:shadow-gold-strong transition-all duration-300" 
+                  className="w-full bg-gradient-gold hover:bg-gradient-gold-dark text-luxury-white border-0 shadow-gold hover:shadow-gold-strong transition-all duration-300" 
                 >
                   Learn More
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
             </Card>

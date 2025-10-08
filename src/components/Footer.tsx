@@ -1,4 +1,4 @@
-import { AlertTriangle, Star } from "lucide-react";
+import { AlertTriangle, Star, Phone, Facebook, Instagram } from "lucide-react";
 import { DiamondIcon, CrownIcon, GemIcon, SparkleIcon } from "@/assets/jewelry-icons";
 
 const Footer = () => {
@@ -40,11 +40,11 @@ const Footer = () => {
                     Verification will be done if necessary.
                   </p>
                   <p>
-                    Benaka Gold Company have all the right to reject any transaction at any point of time. 
+                    OMV Gold Buyers have all the right to reject any transaction at any point of time. 
                     If any customer found suspicious will be reported to the appropriate (Police) Departments.
                   </p>
                   <p className="font-semibold bg-gradient-luxury bg-clip-text text-transparent">
-                    We only purchase gold and do not offer gold loan or gold EMI Services.
+                    We buy gold and release pledged gold. We do not offer gold loan or gold EMI Services.
                   </p>
                 </div>
               </div>
@@ -85,13 +85,13 @@ const Footer = () => {
             <div className="flex items-center gap-2 mb-4">
               <CrownIcon className="h-6 w-6 text-gold-400" />
               <h4 className="text-2xl font-bold bg-gradient-luxury bg-clip-text text-transparent">
-                BENAKA GOLD
+                OMV GOLD BUYERS
               </h4>
               <DiamondIcon className="h-4 w-4 text-luxury-red" />
             </div>
             <p className="text-sm opacity-75 leading-relaxed">
-              South India's trusted gold buyer with 35+ branches. Get instant cash for your gold with 
-              100% transparent process.
+              We buy gold and release pledged gold. Get the best price for your gold and achieve financial freedom 
+              with our transparent process.
             </p>
           </div>
 
@@ -112,9 +112,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#branches" className="opacity-75 hover:opacity-100 hover:text-gold-400 transition-all flex items-center gap-1">
+                <a href="#testimonials" className="opacity-75 hover:opacity-100 hover:text-gold-400 transition-all flex items-center gap-1">
                   <CrownIcon className="h-3 w-3" />
-                  Branches
+                  Testimonials
                 </a>
               </li>
               <li>
@@ -131,23 +131,31 @@ const Footer = () => {
             <h5 className="font-semibold mb-4 bg-gradient-luxury bg-clip-text text-transparent">Contact</h5>
             <ul className="space-y-2 text-sm opacity-75">
               <li className="flex items-center gap-2">
-                <Star className="h-3 w-3 text-gold-400" />
-                Phone: 6366333444
+                <Phone className="h-3 w-3 text-gold-400" />
+                Phone: +91 9030 767 878
               </li>
               <li className="flex items-center gap-2">
                 <GemIcon className="h-3 w-3 text-gold-400" />
                 Mon - Sun: 9:30am - 7:00pm
               </li>
               <li className="flex items-center gap-2">
-                <SparkleIcon className="h-3 w-3 text-gold-400" />
-                www.benakagoldcompany.com
+                <Facebook className="h-3 w-3 text-gold-400" />
+                <a href="https://www.facebook.com/omvgoldbuyers" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">
+                  facebook.com/omvgoldbuyers
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Instagram className="h-3 w-3 text-gold-400" />
+                <a href="https://www.instagram.com/omvgoldbuyers" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">
+                  instagram.com/omvgoldbuyers
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gold-400/20 mt-8 pt-8 text-center text-sm opacity-75">
-          <p>© 2024 Benaka Gold Company. All rights reserved.</p>
+          <p>© 2024 OMV Gold Buyers. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -8,7 +8,7 @@ import {
 const FAQSection = () => {
   const faqs = [
     {
-      question: "What types of gold does Benaka Gold Company buy?",
+      question: "What types of gold does OMV Gold Company buy?",
       answer: "We buy all types of gold including old jewelry, coins, bars, and any form of gold regardless of purity. We accept 22K, 18K, and other gold purities.",
     },
     {
@@ -16,7 +16,7 @@ const FAQSection = () => {
       answer: "Yes! We provide instant cash payment immediately after the gold verification process. You can walk out with cash in hand the same day.",
     },
     {
-      question: "Can I sell pledged gold through Benaka Gold?",
+      question: "Can I sell pledged gold through OMV Gold?",
       answer: "Yes, we help you release pledged gold from any loan provider. Bring your pledge receipt, and we'll handle the process to release and purchase your gold.",
     },
     {

@@ -1,7 +1,6 @@
-import { Phone, MapPin, Menu, X, Star, Gem } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { DiamondIcon, CrownIcon, SparkleIcon } from "@/assets/jewelry-icons";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,27 +10,29 @@ const Header = () => {
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
     { name: "Process", href: "#process" },
-    { name: "Branches", href: "#branches" },
+    { name: "Testimonials", href: "#testimonials" },
     { name: "FAQs", href: "#faqs" },
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-luxury-white via-luxury-cream to-luxury-white/95 backdrop-blur-md border-b border-gold-200 shadow-gold">
       {/* Top Bar */}
-      <div className="bg-gradient-gold text-luxury-white py-2 relative overflow-hidden">
+      <div className="bg-red-600 text-white py-2 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-shine opacity-30"></div>
         <div className="container mx-auto px-4 flex flex-wrap items-center justify-between text-sm relative z-10">
           <div className="flex items-center gap-4">
-            <a href="tel:6366333444" className="flex items-center gap-2 hover:text-luxury-white transition-colors group">
-              <Phone className="h-4 w-4 group-hover:scale-110 transition-transform" />
-              <span className="hidden sm:inline font-medium">6366333444</span>
+            <a href="tel:+919030767878" className="hover:text-white transition-colors">
+              <span className="hidden sm:inline font-medium">+91 9030 767 878</span>
             </a>
-            <span className="hidden md:inline text-luxury-white/80">Mon - Sun: 9:30am - 7:00pm</span>
+            <span className="hidden md:inline text-white/80">Mon - Sun: 9:30am - 7:00pm</span>
           </div>
-          <div className="flex items-center gap-2">
-            <SparkleIcon className="h-4 w-4 text-luxury-white animate-pulse" />
-            <span className="text-luxury-white font-semibold animate-pulse">We Are Hiring !!!</span>
-            <Star className="h-4 w-4 text-luxury-white animate-pulse" />
+          <div className="flex items-center gap-4">
+            <a href="https://www.facebook.com/omvgoldbuyers" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              <span className="hidden sm:inline text-sm">Facebook</span>
+            </a>
+            <a href="https://www.instagram.com/omvgoldbuyers" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              <span className="hidden sm:inline text-sm">Instagram</span>
+            </a>
           </div>
         </div>
       </div>
@@ -40,13 +41,13 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 group">
+          <a href="#home" className="flex items-center group">
             <div className="relative">
-              <CrownIcon className="h-8 w-8 text-gold-500 group-hover:text-gold-600 transition-colors" />
-              <DiamondIcon className="h-3 w-3 text-luxury-red absolute -top-1 -right-1 animate-pulse" />
-            </div>
-            <div className="text-2xl font-bold bg-gradient-luxury bg-clip-text text-transparent">
-              BENAKA GOLD
+              <img 
+                src="/logo white copy.png" 
+                alt="OMV Gold Buyers Logo" 
+                className="h-16 w-auto group-hover:scale-105 transition-transform"
+              />
             </div>
           </a>
 
@@ -67,13 +68,12 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-2">
             <Button 
-              className="bg-gradient-gold hover:bg-gradient-gold-dark text-luxury-white border-0 shadow-gold hover:shadow-gold-strong transition-all duration-300 group" 
+              className="bg-gradient-gold hover:bg-gradient-gold-dark text-luxury-white border-0 shadow-gold hover:shadow-gold-strong transition-all duration-300" 
               size="lg" 
               asChild
             >
-              <a href="#branches">
-                <MapPin className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                Find Nearest Branch
+              <a href="#contact">
+                Call Now
               </a>
             </Button>
           </div>
@@ -106,9 +106,8 @@ const Header = () => {
                 className="mt-2 bg-gradient-gold hover:bg-gradient-gold-dark text-luxury-white border-0 shadow-gold" 
                 asChild
               >
-                <a href="#branches">
-                  <MapPin className="h-4 w-4" />
-                  Find Nearest Branch
+                <a href="#contact">
+                  Call Now
                 </a>
               </Button>
             </nav>

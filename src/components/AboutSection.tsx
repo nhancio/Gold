@@ -19,8 +19,8 @@ const AboutSection = () => {
     {
       icon: MapPin,
       jewelryIcon: GemIcon,
-      title: "Convenient Locations",
-      description: "35+ branches across South India for easy access",
+      title: "Trusted Service",
+      description: "Reliable and trustworthy gold buying service across South India",
     },
     {
       icon: Award,
@@ -62,12 +62,12 @@ const AboutSection = () => {
             <Star className="h-6 w-6 text-luxury-red" />
           </div>
           <h3 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-luxury bg-clip-text text-transparent">
-            Why Choose Benaka Gold?
+            Why Choose OMV Gold Buyers?
           </h3>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            If you need to sell gold for cash, Benaka Gold Company is the best place to sell your gold. 
-            With years of experience, we are a trusted name in the industry. We specialize in buying old 
-            gold jewellery and provide instant cash, ensuring a fully transparent process and expert valuations.
+            We buy gold and release pledged gold to give you financial freedom. With years of experience, 
+            we are a trusted name in the industry. We specialize in buying gold at the best price and 
+            helping you release pledged gold, ensuring a fully transparent process and expert valuations.
           </p>
         </div>
 

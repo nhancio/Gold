@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -38,10 +38,10 @@ const ContactSection = () => {
             Contact Us
           </h2>
           <h3 className="text-4xl md:text-5xl font-bold mb-6">
-            Get Your Special Offer Today
+            Get Your Best Price Today
           </h3>
           <p className="text-xl text-muted-foreground">
-            Call now to get the highest price for your gold
+            Call now to get the best price for your gold or release your pledged gold
           </p>
         </div>
 
@@ -51,7 +51,7 @@ const ContactSection = () => {
             <div>
               <h4 className="text-2xl font-bold mb-6">Get In Touch</h4>
               <p className="text-muted-foreground mb-8">
-                We are the only Gold Buyer having Govt of India Certified Gold Appraiser. 
+                We buy gold and release pledged gold. Get the best rates and financial freedom. 
                 Contact us today to get the best value for your gold.
               </p>
             </div>
@@ -64,7 +64,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h5 className="font-semibold mb-1">Phone</h5>
-                    <p className="text-muted-foreground">6366333444</p>
+                    <p className="text-muted-foreground">+91 9030 767 878</p>
                     <p className="text-sm text-muted-foreground">Mon - Sun: 9:30am - 7:00pm</p>
                   </div>
                 </div>
@@ -76,8 +76,8 @@ const ContactSection = () => {
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h5 className="font-semibold mb-1">Visit Us</h5>
-                    <p className="text-muted-foreground">35+ Branches across South India</p>
+                    <h5 className="font-semibold mb-1">Service Area</h5>
+                    <p className="text-muted-foreground">Serving across South India</p>
                     <p className="text-sm text-muted-foreground">Karnataka, Telangana, Andhra Pradesh, Tamil Nadu</p>
                   </div>
                 </div>
@@ -86,11 +86,27 @@ const ContactSection = () => {
               <Card className="p-6 border-l-4 border-l-primary hover:shadow-lg transition-all">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10">
-                    <Mail className="h-6 w-6 text-primary" />
+                    <Facebook className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h5 className="font-semibold mb-1">Website</h5>
-                    <p className="text-muted-foreground">www.benakagoldcompany.com</p>
+                    <h5 className="font-semibold mb-1">Facebook</h5>
+                    <a href="https://www.facebook.com/omvgoldbuyers" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                      facebook.com/omvgoldbuyers
+                    </a>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 border-l-4 border-l-primary hover:shadow-lg transition-all">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10">
+                    <Instagram className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h5 className="font-semibold mb-1">Instagram</h5>
+                    <a href="https://www.instagram.com/omvgoldbuyers" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                      instagram.com/omvgoldbuyers
+                    </a>
                   </div>
                 </div>
               </Card>
@@ -136,9 +152,8 @@ const ContactSection = () => {
                     <SelectValue placeholder="Choose service" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="sell-gold">Sell Gold</SelectItem>
+                    <SelectItem value="buy-gold">Buy Gold</SelectItem>
                     <SelectItem value="release-pledged">Release Pledged Gold</SelectItem>
-                    <SelectItem value="gold-valuation">Gold Valuation</SelectItem>
                     <SelectItem value="other">Other Inquiry</SelectItem>
                   </SelectContent>
                 </Select>
