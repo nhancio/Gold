@@ -1,5 +1,4 @@
-import { AlertTriangle, Star, Phone, Facebook, Instagram } from "lucide-react";
-import { DiamondIcon, CrownIcon, GemIcon, SparkleIcon } from "@/assets/jewelry-icons";
+import { AlertTriangle, Phone, Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   const partners = [
@@ -11,13 +10,6 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-to-b from-secondary to-secondary/95 text-secondary-foreground relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <DiamondIcon className="absolute top-10 left-20 h-6 w-6 text-gold-400 opacity-20 animate-pulse" />
-        <CrownIcon className="absolute top-32 right-16 h-5 w-5 text-luxury-red opacity-25 animate-bounce" />
-        <GemIcon className="absolute bottom-20 left-16 h-7 w-7 text-gold-300 opacity-20 animate-pulse" />
-        <SparkleIcon className="absolute bottom-40 right-20 h-4 w-4 text-gold-400 opacity-30 animate-bounce" />
-      </div>
       
       {/* Warning Section */}
       <div className="border-b border-gold-400/20 relative z-10">
@@ -57,11 +49,7 @@ const Footer = () => {
       <div className="border-b border-gold-400/20 relative z-10">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center mb-6">
-            <div className="inline-flex items-center gap-2 mb-2">
-              <CrownIcon className="h-5 w-5 text-gold-400" />
-              <h4 className="text-lg font-semibold bg-gradient-luxury bg-clip-text text-transparent">Our Trusted Partners</h4>
-              <Star className="h-5 w-5 text-luxury-red" />
-            </div>
+            <h4 className="text-lg font-semibold bg-gradient-luxury bg-clip-text text-transparent mb-2">Our Trusted Partners</h4>
             <p className="text-sm opacity-75">We work with leading financial institutions</p>
           </div>
           <div className="flex flex-wrap justify-center gap-8">
@@ -82,13 +70,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <CrownIcon className="h-6 w-6 text-gold-400" />
-              <h4 className="text-2xl font-bold bg-gradient-luxury bg-clip-text text-transparent">
-                OMV GOLD BUYERS
-              </h4>
-              <DiamondIcon className="h-4 w-4 text-luxury-red" />
-            </div>
+            <h4 className="text-2xl font-bold bg-gradient-luxury bg-clip-text text-transparent mb-4">
+              OMV GOLD BUYERS
+            </h4>
             <p className="text-sm opacity-75 leading-relaxed">
               We buy gold and release pledged gold. Get the best price for your gold and achieve financial freedom 
               with our transparent process.
@@ -100,26 +84,22 @@ const Footer = () => {
             <h5 className="font-semibold mb-4 bg-gradient-luxury bg-clip-text text-transparent">Quick Links</h5>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#about" className="opacity-75 hover:opacity-100 hover:text-gold-400 transition-all flex items-center gap-1">
-                  <GemIcon className="h-3 w-3" />
+                <a href="#about" className="opacity-75 hover:opacity-100 hover:text-gold-400 transition-all">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#services" className="opacity-75 hover:opacity-100 hover:text-gold-400 transition-all flex items-center gap-1">
-                  <SparkleIcon className="h-3 w-3" />
+                <a href="#services" className="opacity-75 hover:opacity-100 hover:text-gold-400 transition-all">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="opacity-75 hover:opacity-100 hover:text-gold-400 transition-all flex items-center gap-1">
-                  <CrownIcon className="h-3 w-3" />
+                <a href="#testimonials" className="opacity-75 hover:opacity-100 hover:text-gold-400 transition-all">
                   Testimonials
                 </a>
               </li>
               <li>
-                <a href="#faqs" className="opacity-75 hover:opacity-100 hover:text-gold-400 transition-all flex items-center gap-1">
-                  <DiamondIcon className="h-3 w-3" />
+                <a href="#faqs" className="opacity-75 hover:opacity-100 hover:text-gold-400 transition-all">
                   FAQs
                 </a>
               </li>
@@ -130,22 +110,18 @@ const Footer = () => {
           <div>
             <h5 className="font-semibold mb-4 bg-gradient-luxury bg-clip-text text-transparent">Contact</h5>
             <ul className="space-y-2 text-sm opacity-75">
-              <li className="flex items-center gap-2">
-                <Phone className="h-3 w-3 text-gold-400" />
+              <li>
                 Phone: +91 9030 767 878
               </li>
-              <li className="flex items-center gap-2">
-                <GemIcon className="h-3 w-3 text-gold-400" />
+              <li>
                 Mon - Sun: 9:30am - 7:00pm
               </li>
-              <li className="flex items-center gap-2">
-                <Facebook className="h-3 w-3 text-gold-400" />
+              <li>
                 <a href="https://www.facebook.com/omvgoldbuyers" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">
                   facebook.com/omvgoldbuyers
                 </a>
               </li>
-              <li className="flex items-center gap-2">
-                <Instagram className="h-3 w-3 text-gold-400" />
+              <li>
                 <a href="https://www.instagram.com/omvgoldbuyers" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">
                   instagram.com/omvgoldbuyers
                 </a>

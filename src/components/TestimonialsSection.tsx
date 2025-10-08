@@ -1,6 +1,5 @@
 import { Card } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
-import { DiamondIcon, CrownIcon, SparkleIcon } from "@/assets/jewelry-icons";
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -50,23 +49,11 @@ const TestimonialsSection = () => {
 
   return (
     <section id="testimonials" className="py-20 bg-gradient-to-b from-luxury-white to-luxury-cream relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <DiamondIcon className="absolute top-20 left-10 h-12 w-12 text-gold-200 opacity-30 animate-pulse" />
-        <CrownIcon className="absolute top-40 right-20 h-8 w-8 text-gold-300 opacity-25 animate-bounce" />
-        <SparkleIcon className="absolute bottom-20 left-1/4 h-10 w-10 text-luxury-red opacity-20 animate-pulse" />
-        <DiamondIcon className="absolute bottom-40 right-10 h-9 w-9 text-gold-200 opacity-30 animate-bounce" />
-      </div>
-
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <Star className="h-6 w-6 text-gold-500" />
-            <h2 className="text-sm font-semibold text-gold-600 uppercase tracking-wider">
-              Customer Testimonials
-            </h2>
-            <Star className="h-6 w-6 text-luxury-red" />
-          </div>
+          <h2 className="text-sm font-semibold text-gold-600 uppercase tracking-wider mb-4">
+            Customer Testimonials
+          </h2>
           <h3 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-luxury bg-clip-text text-transparent">
             What Our Customers Say
           </h3>
@@ -109,9 +96,7 @@ const TestimonialsSection = () => {
 
         <div className="text-center mt-12">
           <div className="inline-flex items-center gap-4 bg-gradient-gold text-luxury-white px-8 py-4 rounded-full shadow-gold">
-            <Star className="h-6 w-6" />
             <span className="text-lg font-semibold">4.9/5 Average Rating</span>
-            <Star className="h-6 w-6" />
           </div>
         </div>
       </div>
