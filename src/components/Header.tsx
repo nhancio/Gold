@@ -1,4 +1,4 @@
-import { Menu, X } from "lucide-react";
+import { Menu, X, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -7,11 +7,13 @@ const Header = () => {
 
   const navItems = [
     { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
+    { name: "About us", href: "#about" },
     { name: "Services", href: "#services" },
+    { name: "Calculator", href: "#calculator" },
     { name: "Process", href: "#process" },
-    { name: "Testimonials", href: "#testimonials" },
+    { name: "Branches", href: "#branches" },
     { name: "FAQs", href: "#faqs" },
+    { name: "Contact Us", href: "#contact" },
   ];
 
   return (
@@ -24,7 +26,10 @@ const Header = () => {
             <a href="tel:+919030767878" className="hover:text-white transition-colors">
               <span className="hidden sm:inline font-medium">+91 9030 767 878</span>
             </a>
-            <span className="hidden md:inline text-white/80">Mon - Sun: 9:30am - 7:00pm</span>
+            <div className="flex items-center gap-2">
+              <Clock className="h-4 w-4" />
+              <span className="hidden md:inline text-white/80">Mon - Sat: 9:30am - 6:30pm</span>
+            </div>
           </div>
           <div className="flex items-center gap-4">
             <a href="https://www.facebook.com/omvgoldbuyers" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">

@@ -2,32 +2,61 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG, EMAIL_TEMPLATE_PARAMS, initializeEmailJS } from '@/lib/emailjs';
 
 const ContactSection = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    service: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    initializeEmailJS();
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Received!",
-      description: "We'll contact you shortly to discuss your requirements.",
-    });
-    setFormData({ name: "", phone: "", service: "" });
+    setIsLoading(true);
+
+    try {
+      const templateParams = {
+        ...EMAIL_TEMPLATE_PARAMS,
+        name: formData.name,
+        phone: formData.phone,
+        message: `Contact Form Inquiry:
+        Name: ${formData.name}
+        Phone: ${formData.phone}
+        Service: General Inquiry`
+      };
+
+      await emailjs.send(
+        EMAILJS_CONFIG.serviceId, 
+        EMAILJS_CONFIG.templateId, 
+        templateParams, 
+        EMAILJS_CONFIG.publicKey
+      );
+      
+      toast({
+        title: "Message Sent Successfully!",
+        description: "We'll contact you shortly to discuss your requirements.",
+      });
+      setFormData({ name: "", phone: "" });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -86,27 +115,12 @@ const ContactSection = () => {
               <Card className="p-6 border-l-4 border-l-primary hover:shadow-lg transition-all">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10">
-                    <Facebook className="h-6 w-6 text-primary" />
+                    <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h5 className="font-semibold mb-1">Facebook</h5>
-                    <a href="https://www.facebook.com/omvgoldbuyers" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                      facebook.com/omvgoldbuyers
-                    </a>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-6 border-l-4 border-l-primary hover:shadow-lg transition-all">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-primary/10">
-                    <Instagram className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h5 className="font-semibold mb-1">Instagram</h5>
-                    <a href="https://www.instagram.com/omvgoldbuyers" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                      instagram.com/omvgoldbuyers
-                    </a>
+                    <h5 className="font-semibold mb-1">Email</h5>
+                    <p className="text-muted-foreground">omvgoldchandanagar@gmail.com</p>
+                    <p className="text-sm text-muted-foreground">We'll respond within 24 hours</p>
                   </div>
                 </div>
               </Card>
@@ -141,26 +155,9 @@ const ContactSection = () => {
                 />
               </div>
 
-              <div>
-                <Label htmlFor="service">Select Service</Label>
-                <Select
-                  value={formData.service}
-                  onValueChange={(value) => setFormData({ ...formData, service: value })}
-                  required
-                >
-                  <SelectTrigger className="mt-2">
-                    <SelectValue placeholder="Choose service" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="buy-gold">Buy Gold</SelectItem>
-                    <SelectItem value="release-pledged">Release Pledged Gold</SelectItem>
-                    <SelectItem value="other">Other Inquiry</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
 
-              <Button type="submit" variant="premium" size="lg" className="w-full">
-                Submit Inquiry
+              <Button type="submit" variant="premium" size="lg" className="w-full" disabled={isLoading}>
+                {isLoading ? "Sending..." : "Submit Inquiry"}
               </Button>
             </form>
           </Card>

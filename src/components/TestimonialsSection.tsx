@@ -62,36 +62,39 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <Card
-              key={index}
-              className="p-6 bg-luxury-white border-gold-200 hover:shadow-gold-strong transition-all duration-300 group"
-            >
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-gold-400 text-gold-400" />
-                ))}
-              </div>
-              
-              <div className="relative mb-4">
-                <Quote className="h-8 w-8 text-gold-300 absolute -top-2 -left-2 opacity-50" />
-                <p className="text-muted-foreground italic pl-6 leading-relaxed">
-                  "{testimonial.text}"
-                </p>
-              </div>
+        <div className="overflow-hidden">
+          <div className="flex animate-scroll-right gap-8 max-w-none">
+            {/* Duplicate testimonials for seamless loop */}
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
+              <Card
+                key={index}
+                className="flex-shrink-0 w-80 p-6 bg-luxury-white border-gold-200 hover:shadow-gold-strong transition-all duration-300 group"
+              >
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-gold-400 text-gold-400" />
+                  ))}
+                </div>
+                
+                <div className="relative mb-4">
+                  <Quote className="h-8 w-8 text-gold-300 absolute -top-2 -left-2 opacity-50" />
+                  <p className="text-muted-foreground italic pl-6 leading-relaxed">
+                    "{testimonial.text}"
+                  </p>
+                </div>
 
-              <div className="flex items-center justify-between">
-                <div>
-                  <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
-                  <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
+                    <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                  </div>
+                  <div className="px-3 py-1 bg-gradient-gold text-luxury-white text-xs font-semibold rounded-full">
+                    {testimonial.service}
+                  </div>
                 </div>
-                <div className="px-3 py-1 bg-gradient-gold text-luxury-white text-xs font-semibold rounded-full">
-                  {testimonial.service}
-                </div>
-              </div>
-            </Card>
-          ))}
+              </Card>
+            ))}
+          </div>
         </div>
 
         <div className="text-center mt-12">

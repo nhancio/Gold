@@ -1,12 +1,6 @@
 import { AlertTriangle, Phone, Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
-  const partners = [
-    "Muthoot Fincorp",
-    "Muthoot Finance",
-    "Manappuram Gold",
-    "Muthoot Gold",
-  ];
 
   return (
     <footer className="bg-gradient-to-b from-secondary to-secondary/95 text-secondary-foreground relative overflow-hidden">
@@ -45,25 +39,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Partners Section */}
-      <div className="border-b border-gold-400/20 relative z-10">
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center mb-6">
-            <h4 className="text-lg font-semibold bg-gradient-luxury bg-clip-text text-transparent mb-2">Our Trusted Partners</h4>
-            <p className="text-sm opacity-75">We work with leading financial institutions</p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-8">
-            {partners.map((partner, index) => (
-              <div
-                key={index}
-                className="px-6 py-3 rounded-lg bg-gradient-gold/10 hover:bg-gradient-gold/20 border border-gold-400/20 hover:border-gold-400/40 transition-all duration-300 group"
-              >
-                <span className="font-semibold group-hover:text-gold-400 transition-colors">{partner}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Footer Bottom */}
       <div className="container mx-auto px-4 py-8 relative z-10">

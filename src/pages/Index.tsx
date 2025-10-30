@@ -1,25 +1,29 @@
-import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import CalculatorSection from "@/components/CalculatorSection";
 import ServicesSection from "@/components/ServicesSection";
-import GoldTypesSection from "@/components/GoldTypesSection";
-import ProcessSection from "@/components/ProcessSection";
+import CollapsibleProcessSection from "@/components/CollapsibleProcessSection";
 import ComparisonSection from "@/components/ComparisonSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import FloatingNav from "@/components/FloatingNav";
+import FloatingCTA from "@/components/FloatingCTA";
+import TopBanner from "@/components/TopBanner";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Header />
+      <TopBanner />
+      <FloatingNav />
+      <FloatingCTA />
       <main>
         <HeroSection />
         <AboutSection />
+        <CalculatorSection />
         <ServicesSection />
-        <GoldTypesSection />
-        <ProcessSection />
+        <CollapsibleProcessSection />
         <ComparisonSection />
         <TestimonialsSection />
         <FAQSection />

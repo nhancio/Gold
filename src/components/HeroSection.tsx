@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import TypingEffect from "./TypingEffect";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center pt-20 pb-20 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -26,9 +27,18 @@ const HeroSection = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-secondary-foreground mb-6 leading-tight">
-            Sell Your Gold at <span className="bg-gradient-luxury bg-clip-text text-transparent">
-              Best Price Today
-            </span>
+            <TypingEffect 
+              texts={[
+                "Sell Your Gold at Best Price Today",
+                "Release Your Pledged Gold Instantly",
+                "Get Instant Cash for Your Gold",
+                "Trusted Gold Buyers Since Years"
+              ]}
+              speed={100}
+              deleteSpeed={50}
+              pauseTime={2000}
+              className="bg-gradient-luxury bg-clip-text text-transparent"
+            />
           </h1>
           
           <p className="text-xl md:text-2xl text-secondary-foreground/90 mb-8 leading-relaxed">
