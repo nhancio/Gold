@@ -1,15 +1,17 @@
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import CalculatorSection from "@/components/CalculatorSection";
+import GoldWidget from "@/components/GoldWidget";
+import GoldPriceSection from "@/components/GoldPriceSection";
+import GoldFeatureCards from "@/components/GoldFeatureCards";
 import ServicesSection from "@/components/ServicesSection";
 import CollapsibleProcessSection from "@/components/CollapsibleProcessSection";
-import ComparisonSection from "@/components/ComparisonSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import AboutSection from "@/components/AboutSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingNav from "@/components/FloatingNav";
 import FloatingCTA from "@/components/FloatingCTA";
+import FloatingContactIcons from "@/components/FloatingContactIcons";
+import LiveGoldRatePopup from "@/components/LiveGoldRatePopup";
 import TopBanner from "@/components/TopBanner";
 
 const Index = () => {
@@ -17,18 +19,53 @@ const Index = () => {
     <div className="min-h-screen">
       <TopBanner />
       <FloatingNav />
-      <FloatingCTA />
+      <FloatingContactIcons />
+      <LiveGoldRatePopup />
+      
       <main>
+        {/* 1. HeroPage */}
         <HeroSection />
-        <AboutSection />
-        <CalculatorSection />
+        
+        {/* Floating CTA on Hero Page */}
+        <FloatingCTA />
+        
+        {/* 2. CTA (GoldWidget) */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <GoldWidget />
+          </div>
+        </section>
+        
+        {/* 3. Check Gold Price (18k, 22k, 24k) */}
+        <GoldPriceSection />
+        
+        {/* Gold Feature Cards */}
+        <GoldFeatureCards />
+        
+        {/* 4. Services */}
         <ServicesSection />
+        
+        {/* 5. CTA (same CTA) */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <GoldWidget />
+          </div>
+        </section>
+        
+        {/* 6. Steps (Process) */}
         <CollapsibleProcessSection />
-        <ComparisonSection />
-        <TestimonialsSection />
+        
+        {/* 7. About Us */}
+        <AboutSection />
+        
+        {/* 8. FAQs */}
         <FAQSection />
+        
+        {/* 9. Contact Us */}
         <ContactSection />
       </main>
+      
+      {/* 10. Footer */}
       <Footer />
     </div>
   );

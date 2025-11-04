@@ -26,23 +26,34 @@ const HeroSection = () => {
             </span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-secondary-foreground mb-6 leading-tight">
-            <TypingEffect 
-              texts={[
-                "Sell Your Gold at Best Price Today",
-                "Release Your Pledged Gold Instantly",
-                "Get Instant Cash for Your Gold",
-                "Trusted Gold Buyers Since Years"
-              ]}
-              speed={100}
-              deleteSpeed={50}
-              pauseTime={2000}
-              className="bg-gradient-luxury bg-clip-text text-transparent"
-            />
-          </h1>
+          <div className="mb-6 space-y-4">
+            <h1 className="text-4xl md:text-6xl font-bold text-secondary-foreground leading-tight">
+              <TypingEffect 
+                texts={[
+                  "Instantly release your pledged gold"
+                ]}
+                speed={100}
+                deleteSpeed={50}
+                pauseTime={3000}
+                className="text-white"
+              />
+            </h1>
+            <h2 className="text-4xl md:text-6xl font-bold text-secondary-foreground leading-tight">
+              <TypingEffect 
+                texts={[
+                  "Turn your gold into cash"
+                ]}
+                speed={100}
+                deleteSpeed={50}
+                pauseTime={3000}
+                className="text-white"
+                delay={2000}
+              />
+            </h2>
+          </div>
           
           <p className="text-xl md:text-2xl text-secondary-foreground/90 mb-8 leading-relaxed">
-            Release your gold from pledges and get financial freedom. We offer the best rates for your gold with instant cash payment.
+            Get the best rates for your gold with instant cash payment. Release your pledged gold and achieve financial freedom.
           </p>
 
           <div className="flex flex-wrap gap-4">

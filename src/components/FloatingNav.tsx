@@ -1,121 +1,116 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
 
 const FloatingNav = () => {
-  const [isVisible, setIsVisible] = useState(true); // Show immediately
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navItems = [
+  const leftNavItems = [
     { name: "Home", href: "#home" },
     { name: "About us", href: "#about" },
-    { name: "FAQs", href: "#faqs" },
-    { name: "Contact Us", href: "#contact" },
+    { name: "Services", href: "#services", hasDropdown: true },
+    { name: "Branches", href: "#branches" },
+    { name: "Contact", href: "#contact" },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsVisible(scrollTop > 50); // Show after minimal scroll
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const rightNavItems = [
+    { name: "Owner's Message", href: "#owner-message" },
+    { name: "Blogs", href: "#blogs" },
+  ];
 
   return (
-    <div className="fixed top-16 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="bg-white/90 backdrop-blur-xl rounded-full shadow-2xl border border-white/30 px-8 py-3" 
-           style={{
-             background: 'rgba(255, 255, 255, 0.9)',
-             backdropFilter: 'blur(20px)',
-             WebkitBackdropFilter: 'blur(20px)',
-             border: '1px solid rgba(255, 255, 255, 0.3)',
-             boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
-           }}>
-        <div className="flex items-center gap-4">
-          {/* Desktop Navigation - Left */}
-          <nav className="hidden md:flex items-center gap-1">
-            {navItems.slice(0, 2).map((item) => (
-              <Button
+    <div className="fixed top-[40px] md:top-[36px] left-0 right-0 z-50 w-full">
+      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 px-4 md:px-8 py-3 md:py-4">
+        <div className="flex items-center justify-between gap-4">
+          {/* Left Navigation */}
+          <nav className="hidden lg:flex items-center gap-4 flex-1">
+            {leftNavItems.map((item) => (
+              <a
                 key={item.name}
-                variant="ghost"
-                size="sm"
-                className="rounded-full hover:bg-gray-100 hover:text-gray-900 text-gray-900 font-semibold text-base transition-all duration-300"
-                asChild
+                href={item.href}
+                className="text-gray-900 hover:text-gold-600 font-medium text-sm md:text-base transition-colors flex items-center gap-1"
               >
-                <a href={item.href}>
-                  {item.name}
-                </a>
-              </Button>
+                {item.name}
+                {item.hasDropdown && <ChevronDown className="h-4 w-4" />}
+              </a>
             ))}
           </nav>
 
-          {/* Logo - Center */}
-          <div className="flex-shrink-0">
+          {/* Logo - Center (Larger) */}
+          <div className="flex-shrink-0 absolute left-1/2 transform -translate-x-1/2">
             <a href="#home" className="flex items-center group">
               <img 
                 src="/logo white copy.png" 
                 alt="OMV Gold Buyers Logo" 
-                className="h-16 w-auto group-hover:scale-105 transition-transform"
+                className="h-16 md:h-24 w-auto group-hover:scale-105 transition-transform z-10"
               />
             </a>
           </div>
 
-          {/* Desktop Navigation - Right */}
-          <nav className="hidden md:flex items-center gap-1">
-            {navItems.slice(2).map((item) => (
-              <Button
+          {/* Right Navigation */}
+          <nav className="hidden lg:flex items-center gap-4 flex-1 justify-end">
+            {rightNavItems.map((item) => (
+              <a
                 key={item.name}
-                variant="ghost"
-                size="sm"
-                className="rounded-full hover:bg-gray-100 hover:text-gray-900 text-gray-900 font-semibold text-base transition-all duration-300"
-                asChild
+                href={item.href}
+                className="text-gray-900 hover:text-gold-600 font-medium text-sm md:text-base transition-colors"
               >
-                <a href={item.href}>
-                  {item.name}
-                </a>
-              </Button>
+                {item.name}
+              </a>
             ))}
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-gray-900 hover:text-gray-700 transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          {/* Contact Button & Mobile Menu */}
+          <div className="flex items-center gap-3 ml-auto lg:ml-0">
+            <Button 
+              className="hidden md:flex bg-red-600 hover:bg-red-700 text-white rounded-lg px-4 py-2 text-sm font-semibold transition-colors"
+              asChild
+            >
+              <a href="#contact" className="flex items-center gap-1">
+                CONTACT US
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </Button>
+            
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden p-2 text-gray-900 hover:text-gray-700 transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6 text-red-600" /> : <Menu className="h-6 w-6 text-red-600" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 mt-2 bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/30 py-2"
-               style={{
-                 background: 'rgba(255, 255, 255, 0.9)',
-                 backdropFilter: 'blur(20px)',
-                 WebkitBackdropFilter: 'blur(20px)',
-                 border: '1px solid rgba(255, 255, 255, 0.3)',
-                 boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
-               }}>
-            <nav className="flex flex-col">
-              {navItems.map((item) => (
-                <Button
+          <div className="lg:hidden mt-4 pt-4 border-t border-gray-200">
+            <nav className="flex flex-col gap-2">
+              {[...leftNavItems, ...rightNavItems].map((item) => (
+                <a
                   key={item.name}
-                  variant="ghost"
-                  size="sm"
-                  className="justify-start rounded-none hover:bg-gray-100 text-gray-900 hover:text-gray-700 font-semibold text-base"
+                  href={item.href}
+                  className="text-gray-900 hover:text-gold-600 font-medium py-2 transition-colors flex items-center gap-1"
                   onClick={() => setMobileMenuOpen(false)}
-                  asChild
                 >
-                  <a href={item.href}>
-                    {item.name}
-                  </a>
-                </Button>
+                  {item.name}
+                  {'hasDropdown' in item && item.hasDropdown && <ChevronDown className="h-4 w-4" />}
+                </a>
               ))}
+              <Button 
+                className="bg-red-600 hover:bg-red-700 text-white rounded-lg px-4 py-2 mt-2 w-full"
+                asChild
+              >
+                <a href="#contact" className="flex items-center justify-center gap-1">
+                  CONTACT US
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              </Button>
             </nav>
           </div>
         )}
+      </div>
       </div>
     </div>
   );

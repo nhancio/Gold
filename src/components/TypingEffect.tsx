@@ -6,6 +6,7 @@ interface TypingEffectProps {
   deleteSpeed?: number;
   pauseTime?: number;
   className?: string;
+  delay?: number;
 }
 
 const TypingEffect = ({ 
@@ -13,13 +14,28 @@ const TypingEffect = ({
   speed = 100, 
   deleteSpeed = 50, 
   pauseTime = 2000,
-  className = ""
+  className = "",
+  delay = 0
 }: TypingEffectProps) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isStarted, setIsStarted] = useState(false);
 
   useEffect(() => {
+    if (delay > 0 && !isStarted) {
+      const delayTimeout = setTimeout(() => {
+        setIsStarted(true);
+      }, delay);
+      return () => clearTimeout(delayTimeout);
+    }
+    
+    if (!isStarted && delay === 0) {
+      setIsStarted(true);
+    }
+    
+    if (!isStarted) return;
+
     const timeout = setTimeout(() => {
       const fullText = texts[currentTextIndex];
       
@@ -38,7 +54,7 @@ const TypingEffect = ({
     }, isDeleting ? deleteSpeed : speed);
 
     return () => clearTimeout(timeout);
-  }, [currentText, isDeleting, currentTextIndex, texts, speed, deleteSpeed, pauseTime]);
+  }, [currentText, isDeleting, currentTextIndex, texts, speed, deleteSpeed, pauseTime, isStarted, delay]);
 
   return (
     <span className={className}>
