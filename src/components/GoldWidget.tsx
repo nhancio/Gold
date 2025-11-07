@@ -1,5 +1,4 @@
-import { MapPin, IndianRupee, MessageCircle, Phone, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { MessageCircle, X } from "lucide-react";
 import { useState } from "react";
 
 export default function GoldWidget() {
@@ -9,20 +8,6 @@ export default function GoldWidget() {
 
   return (
     <div className="bg-[#121212] rounded-2xl p-4 md:p-6 w-full max-w-[340px] md:max-w-full mx-auto shadow-lg text-white">
-      <div className="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-4 mb-3 md:mb-4">
-        {/* Find Nearest Branch */}
-        <div className="bg-[#1e1e1e] rounded-xl flex flex-col justify-center items-center p-3 md:p-6 cursor-pointer hover:bg-[#2a2a2a] transition">
-          <MapPin className="text-blue-400 mb-2 md:mb-3 w-5 h-5 md:w-8 md:h-8" />
-          <p className="text-sm md:text-base font-semibold text-center">Find Nearest Branch</p>
-        </div>
-        
-        {/* Live Gold Rate */}
-        <div className="bg-[#1e1e1e] rounded-xl flex flex-col justify-center items-center p-3 md:p-6 cursor-pointer hover:bg-[#2a2a2a] transition">
-          <IndianRupee className="text-yellow-400 mb-2 md:mb-3 w-5 h-5 md:w-8 md:h-8" />
-          <p className="text-sm md:text-base font-semibold text-center">Live Gold Rate</p>
-        </div>
-      </div>
-
       {/* Sell & Release Gold Buttons */}
       <div className="flex gap-2 mb-4 md:justify-center">
         <button className="flex-1 md:flex-initial md:min-w-[200px] bg-blue-600 hover:bg-blue-700 text-white py-2 md:py-3 rounded-lg font-semibold transition text-sm md:text-base">

@@ -9,11 +9,46 @@ The gold calculator popup uses EmailJS to send quote requests to `omvgoldchandan
 3. Verify your email address
 
 ## Step 2: Create Email Service
-1. In your EmailJS dashboard, go to "Email Services"
-2. Click "Add New Service"
-3. Choose your email provider (Gmail, Outlook, etc.)
-4. Follow the setup instructions for your provider
-5. Note down the **Service ID** (e.g., `service_xxxxxxx`)
+
+### For Gmail Service:
+
+1. **Create Google Cloud Console Project:**
+   - Go to [Google Cloud Console](https://console.cloud.google.com/)
+   - Create a new project or select an existing one
+   - Enable the **Gmail API** for your project
+
+2. **Configure OAuth Consent Screen:**
+   - Go to "APIs & Services" > "OAuth consent screen"
+   - Choose "External" user type (unless you have a Google Workspace)
+   - Fill in the required information:
+     - App name: "OMV Gold Buyers Email Service"
+     - User support email: Your email
+     - Developer contact: Your email
+   - Add scopes: `https://www.googleapis.com/auth/gmail.send`
+   - Save and continue
+
+3. **Create OAuth 2.0 Credentials:**
+   - Go to "APIs & Services" > "Credentials"
+   - Click "Create Credentials" > "OAuth client ID"
+   - Choose "Web application" as the application type
+   - Name: "EmailJS Gmail Service"
+   - Authorized redirect URIs: Add `https://api.emailjs.com/api/v1.0/user/oauth/authorize`
+   - Click "Create"
+   - **Copy the Client ID** (NOT the Client Secret - you don't need it for EmailJS)
+
+4. **Configure EmailJS Service:**
+   - In your EmailJS dashboard, go to "Email Services"
+   - Click "Add New Service"
+   - Choose "Gmail"
+   - Click "Connect Account"
+   - When prompted, paste your **Google OAuth Client ID**
+   - Complete the OAuth flow by signing in with your Gmail account
+   - Authorize the permissions
+   - Note down the **Service ID** (e.g., `service_xxxxxxx`)
+
+### For Other Email Providers:
+- Follow the provider-specific setup instructions in EmailJS
+- Note down the **Service ID** after configuration
 
 ## Step 3: Create Email Template
 1. Go to "Email Templates" in your dashboard

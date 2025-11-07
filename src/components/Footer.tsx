@@ -1,47 +1,10 @@
-import { AlertTriangle, Phone, Facebook, Instagram } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 
 const Footer = () => {
-
   return (
     <footer className="bg-gradient-to-b from-secondary to-secondary/95 text-secondary-foreground relative overflow-hidden">
-      
-      {/* Warning Section */}
-      <div className="border-b border-gold-400/20 relative z-10">
-        <div className="container mx-auto px-4 py-12">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="p-3 rounded-lg bg-gradient-red-gold shadow-red">
-                <AlertTriangle className="h-6 w-6 text-luxury-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-4 bg-gradient-luxury bg-clip-text text-transparent">IMPORTANT WARNING</h3>
-                <div className="space-y-3 text-sm opacity-90 leading-relaxed">
-                  <p>
-                    Selling of Stolen / Theft Items is a <strong>Punishable Criminal Offense</strong>. 
-                    One should produce required documents for transaction.
-                  </p>
-                  <p>
-                    We do not accept any transaction from minors under any circumstances. Customers from 
-                    age 18 to 23 years must have their family members' consent for transaction. 
-                    Verification will be done if necessary.
-                  </p>
-                  <p>
-                    OMV Gold Buyers have all the right to reject any transaction at any point of time. 
-                    If any customer found suspicious will be reported to the appropriate (Police) Departments.
-                  </p>
-                  <p className="font-semibold bg-gradient-luxury bg-clip-text text-transparent">
-                    We buy gold and release pledged gold. We do not offer gold loan or gold EMI Services.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
       {/* Footer Bottom */}
-      <div className="container mx-auto px-4 py-8 relative z-10">
+      <div className="container mx-auto px-4 py-6 md:py-8 relative z-10">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>

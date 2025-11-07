@@ -9,27 +9,36 @@ const FloatingNav = () => {
     { name: "Home", href: "#home" },
     { name: "About us", href: "#about" },
     { name: "Services", href: "#services", hasDropdown: true },
-    { name: "Branches", href: "#branches" },
     { name: "Contact", href: "#contact" },
   ];
 
   const rightNavItems = [
     { name: "Owner's Message", href: "#owner-message" },
-    { name: "Blogs", href: "#blogs" },
   ];
 
   return (
-    <div className="fixed top-[40px] md:top-[36px] left-0 right-0 z-50 w-full">
-      <div className="container mx-auto px-4 max-w-7xl">
-      <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 px-4 md:px-8 py-3 md:py-4">
+    <div className="sticky md:fixed top-0 left-0 right-0 z-40 w-full">
+      <div className="w-full max-w-full px-0 md:px-4 overflow-x-hidden">
+      <div className="bg-red-600 rounded-none md:rounded-2xl shadow-2xl border-0 md:border border-gray-100 px-4 md:px-8 py-3 md:py-4 w-full max-w-full">
         <div className="flex items-center justify-between gap-4">
-          {/* Left Navigation */}
+          {/* Mobile: Logo on Left - Double Size */}
+          <div className="lg:hidden flex-shrink-0">
+            <a href="#home" className="flex items-center group">
+              <img 
+                src="/logo white copy.png" 
+                alt="OMV Gold Buyers Logo" 
+                className="h-28 w-auto group-hover:scale-105 transition-transform"
+              />
+            </a>
+          </div>
+
+          {/* Desktop: Left Navigation */}
           <nav className="hidden lg:flex items-center gap-4 flex-1">
             {leftNavItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-900 hover:text-gold-600 font-medium text-sm md:text-base transition-colors flex items-center gap-1"
+                className="text-gray-900 md:text-white hover:text-gold-600 md:hover:text-gold-300 font-medium text-sm md:text-base transition-colors flex items-center gap-1"
               >
                 {item.name}
                 {item.hasDropdown && <ChevronDown className="h-4 w-4" />}
@@ -37,24 +46,24 @@ const FloatingNav = () => {
             ))}
           </nav>
 
-          {/* Logo - Center (Larger) */}
-          <div className="flex-shrink-0 absolute left-1/2 transform -translate-x-1/2">
+          {/* Desktop: Logo - Center (Larger) */}
+          <div className="hidden lg:block flex-shrink-0 absolute left-1/2 transform -translate-x-1/2">
             <a href="#home" className="flex items-center group">
               <img 
                 src="/logo white copy.png" 
                 alt="OMV Gold Buyers Logo" 
-                className="h-16 md:h-24 w-auto group-hover:scale-105 transition-transform z-10"
+                className="h-28 md:h-36 w-auto group-hover:scale-105 transition-transform z-10"
               />
             </a>
           </div>
 
-          {/* Right Navigation */}
+          {/* Desktop: Right Navigation */}
           <nav className="hidden lg:flex items-center gap-4 flex-1 justify-end">
             {rightNavItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-900 hover:text-gold-600 font-medium text-sm md:text-base transition-colors"
+                className="text-gray-900 md:text-white hover:text-gold-600 md:hover:text-gold-300 font-medium text-sm md:text-base transition-colors"
               >
                 {item.name}
               </a>
@@ -73,29 +82,29 @@ const FloatingNav = () => {
               </a>
             </Button>
             
-            {/* Mobile Menu Button */}
+            {/* Mobile: Hamburger on Right - White */}
             <button
-              className="lg:hidden p-2 text-gray-900 hover:text-gray-700 transition-colors"
+              className="lg:hidden p-2 text-white hover:text-gray-200 transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? <X className="h-6 w-6 text-red-600" /> : <Menu className="h-6 w-6 text-red-600" />}
+              {mobileMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden mt-4 pt-4 border-t border-gray-200">
+          <div className="lg:hidden mt-4 pt-4 border-t border-white/30">
             <nav className="flex flex-col gap-2">
               {[...leftNavItems, ...rightNavItems].map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-900 hover:text-gold-600 font-medium py-2 transition-colors flex items-center gap-1"
+                  className="text-white hover:text-yellow-300 font-medium py-2 transition-colors flex items-center gap-1"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
-                  {'hasDropdown' in item && item.hasDropdown && <ChevronDown className="h-4 w-4" />}
+                  {'hasDropdown' in item && item.hasDropdown && <ChevronDown className="h-4 w-4 text-white" />}
                 </a>
               ))}
               <Button 
