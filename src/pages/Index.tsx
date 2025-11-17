@@ -1,6 +1,5 @@
 import HeroSection from "@/components/HeroSection";
 import GoldWidget from "@/components/GoldWidget";
-import GoldPriceSection from "@/components/GoldPriceSection";
 import ServicesSection from "@/components/ServicesSection";
 import CollapsibleProcessSection from "@/components/CollapsibleProcessSection";
 import AboutSection from "@/components/AboutSection";
@@ -10,14 +9,12 @@ import Footer from "@/components/Footer";
 import FloatingNav from "@/components/FloatingNav";
 import FloatingCTA from "@/components/FloatingCTA";
 import FloatingContactIcons from "@/components/FloatingContactIcons";
-import LiveGoldRatePopup from "@/components/LiveGoldRatePopup";
 
 const Index = () => {
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
       <FloatingNav />
       <FloatingContactIcons />
-      <LiveGoldRatePopup />
       
       <main className="w-full overflow-x-hidden">
         {/* 1. HeroPage */}
@@ -33,10 +30,7 @@ const Index = () => {
           </div>
         </section>
         
-        {/* 3. Check Gold Price (18k, 22k, 24k) */}
-        <GoldPriceSection />
-        
-        {/* 4. Services */}
+        {/* 3. Services */}
         <ServicesSection />
         
         {/* 5. CTA (same CTA) */}

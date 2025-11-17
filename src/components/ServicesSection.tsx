@@ -2,22 +2,26 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import goldAssessment from "@/assets/gold-assessment.jpg";
 import instantCash from "@/assets/instant-cash.jpg";
 
 const ServicesSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
 
   const services = [
     {
       title: "Sell Gold For Cash",
       description: "Get instant cash for your gold. We offer competitive prices based on live market rates. Sell your gold today for the best value.",
       image: goldAssessment,
+      link: "/sell-gold",
     },
     {
       title: "Release Pledge Gold",
       description: "Release your pledged gold and regain financial control. We offer competitive rates to help you retrieve your valuable assets.",
       image: instantCash,
+      link: "/release-gold",
     },
   ];
 
@@ -58,7 +62,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Service Card Carousel */}
-        <div className="max-w-md md:max-w-2xl mx-auto">
+        <div className="max-w-md md:max-w-4xl mx-auto">
           <Card className="bg-white rounded-2xl overflow-hidden shadow-2xl relative">
             {/* Service Image */}
             <div className="relative h-64 md:h-80 overflow-hidden">
@@ -82,6 +86,7 @@ const ServicesSection = () => {
               <div className="relative">
                 <Button 
                   className="w-full bg-yellow-400 hover:bg-yellow-500 text-red-600 font-bold rounded-xl py-3 md:py-4 text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  onClick={() => navigate(services[currentIndex].link)}
                 >
                   Know More
                 </Button>

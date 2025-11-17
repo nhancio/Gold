@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const FloatingNav = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -9,11 +9,6 @@ const FloatingNav = () => {
     { name: "Home", href: "#home" },
     { name: "About us", href: "#about" },
     { name: "Services", href: "#services", hasDropdown: true },
-    { name: "Contact", href: "#contact" },
-  ];
-
-  const rightNavItems = [
-    { name: "Owner's Message", href: "#owner-message" },
   ];
 
   return (
@@ -38,10 +33,9 @@ const FloatingNav = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-900 md:text-white hover:text-gold-600 md:hover:text-gold-300 font-medium text-sm md:text-base transition-colors flex items-center gap-1"
+                className="text-gray-900 md:text-white hover:text-gold-600 md:hover:text-gold-300 font-medium text-sm md:text-base transition-colors"
               >
                 {item.name}
-                {item.hasDropdown && <ChevronDown className="h-4 w-4" />}
               </a>
             ))}
           </nav>
@@ -59,15 +53,6 @@ const FloatingNav = () => {
 
           {/* Desktop: Right Navigation */}
           <nav className="hidden lg:flex items-center gap-4 flex-1 justify-end">
-            {rightNavItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-900 md:text-white hover:text-gold-600 md:hover:text-gold-300 font-medium text-sm md:text-base transition-colors"
-              >
-                {item.name}
-              </a>
-            ))}
           </nav>
 
           {/* Contact Button & Mobile Menu */}
@@ -96,15 +81,14 @@ const FloatingNav = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden mt-4 pt-4 border-t border-white/30">
             <nav className="flex flex-col gap-2">
-              {[...leftNavItems, ...rightNavItems].map((item) => (
+              {leftNavItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-white hover:text-yellow-300 font-medium py-2 transition-colors flex items-center gap-1"
+                  className="text-white hover:text-yellow-300 font-medium py-2 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
-                  {'hasDropdown' in item && item.hasDropdown && <ChevronDown className="h-4 w-4 text-white" />}
                 </a>
               ))}
               <Button 
